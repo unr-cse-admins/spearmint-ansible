@@ -1,0 +1,8 @@
+[login]
+spearmint
+
+[compute]
+spearmint-[0:1]
+
+[compute:vars]
+ansible_ssh_private_key_file=~/.ssh/private_keys/spearmint_ansible

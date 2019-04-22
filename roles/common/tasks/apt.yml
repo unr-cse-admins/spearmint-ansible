@@ -1,0 +1,22 @@
+- name: Update cache
+  apt:
+    update_cache: yes
+
+- name: Install packages
+  apt:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - ntpdate
+      - slurm-wlm
+      - gcc
+      - freeipa-client
+      - sssd-tools
+      - nfs-common
+      - autofs
+      - htop
+      - make
+      - libpmi0
+      - mpich
+      - xdg-utils
