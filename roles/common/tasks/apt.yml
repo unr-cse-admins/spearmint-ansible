@@ -1,3 +1,13 @@
+- name: Add UNR CoEn Repository GPG Key
+  apt_key:
+    url: https://apt.cse.unr.edu/public.gpg
+    state: present
+
+- name: Add UNR CoEn Repository
+  apt_repository:
+    repo: 'deb https://apt.cse.unr.edu/ubuntu/ main'
+    state: present
+
 - name: Update cache
   apt:
     update_cache: yes
