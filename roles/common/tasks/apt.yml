@@ -1,11 +1,11 @@
 - name: Add UNR CoEn Repository GPG Key
   apt_key:
-    url: https://apt.cse.unr.edu/public.gpg
+    url: https://apt.cse.unr.edu/ubuntu/dists/bionic/public.gpg
     state: present
 
 - name: Add UNR CoEn Repository
   apt_repository:
-    repo: 'deb https://apt.cse.unr.edu/ubuntu/ main'
+    repo: 'deb https://apt.cse.unr.edu/ubuntu/ bionic main'
     state: present
 
 - name: Update cache
@@ -29,4 +29,3 @@
       - make
       - libpmi0
       - mpich
-      - xdg-utils

@@ -1,6 +1,11 @@
 - name: apply common configuration to all nodes
   hosts: all
   remote_user: root
-
   roles:
     - common
+
+- name: apply compute configuratoin to compute nodes
+  hosts: compute
+  remote_user: root
+  roles:
+    - compute
