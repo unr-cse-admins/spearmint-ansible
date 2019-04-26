@@ -4,7 +4,7 @@
   roles:
     - common
 
-- name: apply compute configuratoin to compute nodes
+- name: apply configuration to compute nodes
   hosts: compute
   remote_user: root
   roles:
