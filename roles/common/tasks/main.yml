@@ -1,2 +1,3 @@
 - include: auth.yml
 - include: apt.yml
+- include: slurm.yml
