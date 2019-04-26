@@ -1,4 +1,4 @@
-- include: auth.yml
 - include: apt.yml
+- include: auth.yml
 - include: systemd.yml
 - include: slurm.yml

@@ -6,6 +6,6 @@
   apt:
       name: "{{ packages }}"
       state: present
-    vars:
-      packages:
-        - ntp
+  vars:
+     packages:
+       - ntp
