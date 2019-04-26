@@ -1,0 +1,5 @@
+- name: Make sure slurmd is enabled and running
+  systemd:
+    name: slurmd
+    state: started
+    enabled: yes

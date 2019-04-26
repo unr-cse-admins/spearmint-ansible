@@ -4,6 +4,12 @@
   roles:
     - common
 
+- name: apply configuration to master nodes
+  hosts: master
+  remote_user: root
+  roles:
+    - master
+
 - name: apply configuration to compute nodes
   hosts: compute
   remote_user: root
