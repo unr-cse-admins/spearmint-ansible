@@ -5,3 +5,44 @@
     key: '{{ item }}'
   with_file:
   - public_keys/spearmint_ansible.pub
+
+- name: Join CSE domain
+  ipa_host:
+    ipa_host: ipa1.cse.unr.edu
+    name: {{ inventory_hostname }}
+    ipa_user: {{ ipa_user }}
+    ipa_pass: {{ ipa_pass }}
+    state: present
+
+- name: Copy auto.master to all nodes
+  template:
+    src: templates/autofs/auto.master.j2
+    dest: /etc/auto.master
+    owner: root
+    group: root
+    mode: 0644
+  register: autofs_master
+
+- name: Copy auto.cse to all nodes
+  template:
+    src: templates/autofs/auto.cse.j2
+    dest: /etc/auto.cse
+    owner: root
+    group: root
+    mode: 0644
+  register: autofs_cse
+
+- name: Copy auto.milk to all nodes
+  template:
+    src: templates/autofs/auto.milk.j2
+    dest: /etc/auto.milk
+    owner: root
+    group: root
+    mode: 0644
+  register: auto_milk
+
+- name: Restart autofs daemon
+  systemd:
+    name: autofs
+    state: restarted
+  when: auto_master.changed or auto_cse.changed or auto_milk.changed

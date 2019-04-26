@@ -3,6 +3,13 @@
   remote_user: root
   roles:
     - common
+  vars_prompt:
+    - name: "ipa_user"
+      prompt: "IPA User"
+      
+    - name: "ipa_pass"
+      prompt: "IPA Password"
+      private: yes
 
 - name: apply configuration to master nodes
   hosts: master
