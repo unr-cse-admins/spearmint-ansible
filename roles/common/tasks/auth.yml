@@ -39,10 +39,10 @@
     owner: root
     group: root
     mode: 0644
-  register: auto_milk
+  register: autofs_milk
 
 - name: Restart autofs daemon
   systemd:
     name: autofs
     state: restarted
-  when: auto_master.changed or auto_cse.changed or auto_milk.changed
+  when: autofs_master.changed or autofs_cse.changed or autofs_milk.changed
