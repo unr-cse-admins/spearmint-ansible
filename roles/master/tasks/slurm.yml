@@ -1,5 +1,5 @@
-- name: Make sure slurm-ctld is enabled and running
+- name: Make sure slurmctld is enabled and running
   systemd:
-    name: slurm-ctld
+    name: slurmctld
     state: started
     enabled: yes
