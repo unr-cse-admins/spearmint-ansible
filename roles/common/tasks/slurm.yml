@@ -1,7 +1,7 @@
 - name: Apply slurm.conf to all nodes
   template:
     src: templates/slurm/slurm.conf.j2
-    dest: /etc/slurm-llnl/slurm.conf.new
+    dest: /etc/slurm-llnl/slurm.conf
     owner: root
     group: root
     mode: 0644
@@ -9,7 +9,7 @@
 - name: Apply cgroup.conf to all nodes
   template:
     src: templates/slurm/cgroup.conf.j2
-    dest: /etc/slurm-llnl/cgroup.conf.new
+    dest: /etc/slurm-llnl/cgroup.conf
     owner: root
     group: root
     mode: 0644
@@ -17,7 +17,7 @@
 - name: Apply gres.conf to all nodes
   template:
     src: templates/slurm/gres.conf.j2
-    dest: /etc/slurm-llnl/gres.conf.new
+    dest: /etc/slurm-llnl/gres.conf
     owner: root
     group: root
     mode: 0644
