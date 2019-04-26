@@ -27,4 +27,4 @@
 
 - name: Reconfigure slurm
   when: inventory_hostname in groups['master']
-  shell: hostname
+  shell: scontrol reconfigure
