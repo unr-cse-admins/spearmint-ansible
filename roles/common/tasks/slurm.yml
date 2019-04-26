@@ -5,6 +5,7 @@
     owner: root
     group: root
     mode: 0644
+  register: slurm_conf
 
 - name: Apply cgroup.conf to all nodes
   template:
@@ -13,6 +14,7 @@
     owner: root
     group: root
     mode: 0644
+  register: cgroup_conf
 
 - name: Apply gres.conf to all nodes
   template:
@@ -21,3 +23,8 @@
     owner: root
     group: root
     mode: 0644
+  register: gres_conf
+
+- name: Reconfigure slurm
+  when: inventory_hostname in groups['master']
+  shell: hostname
