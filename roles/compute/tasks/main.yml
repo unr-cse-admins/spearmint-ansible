@@ -1,2 +1,2 @@
 - include: apt.yml
-- include: slurm.yml
+- include: systemd.yml

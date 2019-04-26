@@ -8,6 +8,7 @@
     state: present
   vars:
     packages:
+      - ntpdate
       - xdg-utils
       - matlab-2018b
       - libcudnn7

@@ -25,7 +25,6 @@
       - libpmi0
       - libpmix-dev
       - ntp
-      - ntpdate
       - gcc
       - freeipa-client
       - sssd-tools
