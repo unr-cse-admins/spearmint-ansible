@@ -1,0 +1,11 @@
+- name: Make sure slurmd is enabled and running
+  systemd:
+    name: slurmd
+    state: started
+    enabled: yes
+
+- name: Make sure munge is enabled and running
+  systemd:
+    name: munge
+    state: started
+    enabled: yes

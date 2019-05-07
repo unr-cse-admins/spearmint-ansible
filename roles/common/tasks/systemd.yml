@@ -1,0 +1,5 @@
+- name: Make sure munge is running on all nodes
+  systemd:
+    name: munge
+    state: started
+    enabled: yes

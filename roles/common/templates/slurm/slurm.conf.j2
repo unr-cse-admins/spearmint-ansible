@@ -1,0 +1,34 @@
+ControlMachine=spearmint
+MpiDefault=none
+ProctrackType=proctrack/cgroup
+ReturnToService=1
+SlurmctldPidFile=/var/run/slurmctld.pid
+SlurmctldPort=6817
+SlurmdPidFile=/var/run/slurmd.pid
+SlurmdPort=6818
+SlurmdSpoolDir=/var/spool/slurmd
+SlurmUser=slurm
+StateSaveLocation=/var/spool/slurm
+SwitchType=switch/none
+TaskPlugin=task/affinity
+TaskPluginParam=Sched
+InactiveLimit=0
+KillWait=30
+MinJobAge=300
+SlurmctldTimeout=120
+SlurmdTimeout=300
+Waittime=0
+FastSchedule=1
+SchedulerType=sched/backfill
+SelectType=select/cons_res
+SelectTypeParameters=CR_Core
+AccountingStorageType=accounting_storage/none
+AccountingStoreJobComment=YES
+ClusterName=cluster
+JobCompType=jobcomp/none
+JobAcctGatherFrequency=30
+JobAcctGatherType=jobacct_gather/none
+SlurmctldDebug=info
+SlurmdDebug=info
+NodeName=spearmint-0 CPUs=24 RealMemory=63488 Sockets=1 CoresPerSocket=12 ThreadsPerCore=2 State=UNKNOWN
+PartitionName=compute Nodes=spearmint-0 Default=YES MaxTime=INFINITE State=UP

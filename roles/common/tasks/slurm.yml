@@ -1,0 +1,30 @@
+- name: Apply slurm.conf to all nodes
+  template:
+    src: templates/slurm/slurm.conf.j2
+    dest: /etc/slurm-llnl/slurm.conf
+    owner: root
+    group: root
+    mode: 0644
+  register: slurm_conf
+
+- name: Apply cgroup.conf to all nodes
+  template:
+    src: templates/slurm/cgroup.conf.j2
+    dest: /etc/slurm-llnl/cgroup.conf
+    owner: root
+    group: root
+    mode: 0644
+  register: cgroup_conf
+
+- name: Apply gres.conf to all nodes
+  template:
+    src: templates/slurm/gres.conf.j2
+    dest: /etc/slurm-llnl/gres.conf
+    owner: root
+    group: root
+    mode: 0644
+  register: gres_conf
+
+- name: Reconfigure slurm
+  when: inventory_hostname in groups['master']
+  shell: scontrol reconfigure

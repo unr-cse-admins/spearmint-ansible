@@ -3,8 +3,21 @@
   remote_user: root
   roles:
     - common
+  vars_prompt:
+    - name: "ipa_user"
+      prompt: "IPA User"
+      
+    - name: "ipa_pass"
+      prompt: "IPA Password"
+      private: yes
 
-- name: apply compute configuratoin to compute nodes
+- name: apply configuration to master nodes
+  hosts: master
+  remote_user: root
+  roles:
+    - master
+
+- name: apply configuration to compute nodes
   hosts: compute
   remote_user: root
   roles:
