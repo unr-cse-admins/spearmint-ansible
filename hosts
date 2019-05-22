@@ -1,7 +1,7 @@
 [master]
 spearmint.cse.unr.edu
 
-[login:vars]
+[master:vars]
 ansible_ssh_private_key_file=~/.ssh/private_keys/spearmint_ansible
 
 [compute]
